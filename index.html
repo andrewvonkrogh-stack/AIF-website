@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Finance — University of Minnesota</title>
+  <meta name="description" content="AI in Finance (AIF) is a University of Minnesota student organization exploring how artificial intelligence is reshaping markets, investing, and the future of money. Open to all majors." />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ============================================================
+       HOME PAGE — scoped styles (cooler, simpler hero)
+       ============================================================ */
+
+    /* ---- Dark hero ---- */
+    .home-hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 68px 0 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 60% at 75% 15%, #7B1C1C 0%, #4A0F0F 55%, #380A0A 100%);
+    }
+    .home-hero .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 66px 66px;
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 35%, transparent 80%);
+              mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 35%, transparent 80%);
+    }
+    .home-hero .hero-glow {
+      position: absolute;
+      width: 620px; height: 620px;
+      top: -180px; right: -120px;
+      background: radial-gradient(circle, rgba(212,160,23,0.22) 0%, transparent 62%);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .home-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding-bottom: 165px;
+    }
+
+    .home-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(212,160,23,0.45);
+      background: rgba(212,160,23,0.08);
+      color: var(--gold-light);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .home-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold-light);
+      box-shadow: 0 0 0 0 rgba(232,184,32,0.6);
+      animation: pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(232,184,32,0.5); }
+      70%  { box-shadow: 0 0 0 8px rgba(232,184,32,0); }
+      100% { box-shadow: 0 0 0 0 rgba(232,184,32,0); }
+    }
+
+    .home-hero h1 {
+      color: #fff;
+      font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.04;
+      margin-bottom: 22px;
+    }
+    .home-hero h1 .accent { color: var(--gold-light); }
+
+    .home-hero .lead {
+      color: rgba(255,255,255,0.72);
+      font-size: 1.12rem;
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 34px;
+    }
+
+    .home-cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 38px; }
+    .btn-hero-gold {
+      background: var(--gold-warm); color: #2A1505; border-color: var(--gold-warm);
+      font-weight: 700;
+    }
+    .btn-hero-gold:hover {
+      background: var(--gold-light); border-color: var(--gold-light);
+      transform: translateY(-1px); box-shadow: 0 8px 24px rgba(212,160,23,0.3);
+    }
+    .btn-hero-ghost {
+      background: rgba(255,255,255,0.04); color: #fff;
+      border-color: rgba(255,255,255,0.28);
+    }
+    .btn-hero-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.6); }
+
+    /* Slim inline stat line */
+    .home-stats {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 10px 18px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.86rem;
+    }
+    .home-stats b { color: #fff; font-weight: 700; }
+    .home-stats .sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.3); }
+
+    /* ---- Animated market line at hero base ---- */
+    .hero-marketline {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 180px;
+      z-index: 1;
+      display: block;
+    }
+    .ml-path { /* fully drawn on load — no draw animation */ }
+    /* dot travels the line continuously (begins at 0s -> no freeze/teleport on load) */
+    .ml-dot  { filter: drop-shadow(0 0 6px rgba(232,184,32,0.9)); }
+    .ml-halo { filter: blur(2px); }
+    @media (prefers-reduced-motion: reduce) {
+      .ml-dot animateMotion, .ml-halo animateMotion, .ml-core animateMotion { display: none; }
+    }
+
+    /* ---- Learn / Build / Connect ---- */
+    .lbc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .lbc-card {
+      padding: 38px 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition);
+    }
+    .lbc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(123,28,28,0.18);
+    }
+    .lbc-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; color: #fff;
+      margin-bottom: 22px;
+      background: var(--maroon);
+    }
+    .lbc-card:nth-child(2) .lbc-icon { background: var(--gold-warm); }
+    .lbc-card:nth-child(3) .lbc-icon { background: var(--maroon-deep); }
+    .lbc-card h3 { color: var(--text); margin-bottom: 10px; }
+    .lbc-card p { font-size: 0.9rem; margin: 0; }
+
+    .link-arrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-weight: 600; color: var(--maroon); font-size: 0.92rem;
+      transition: gap var(--transition);
+    }
+    .link-arrow:hover { gap: 11px; }
+
+    .events-top {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 20px; margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .events-top h2 { margin: 0; }
+
+    @media (max-width: 768px) {
+      .lbc-grid { grid-template-columns: 1fr; }
+      .home-hero-inner { padding-bottom: 90px; }
+      .home-hero { min-height: auto; padding-bottom: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="AI in Finance — University of Minnesota, home">
+        <img src="aif-logo.png" alt="AI in Finance — University of Minnesota" class="navbar-logo-img" />
+      </a>
+      <div class="navbar-right">
+        <ul class="navbar-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-gold navbar-cta">Join Us</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="home-hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+
+    <div class="container">
+      <div class="home-hero-inner">
+        <h1>AI is rewriting finance.<br><span class="accent">Be part of it.</span></h1>
+        <p class="lead">Workshops, projects, and guest speakers at the intersection of AI and finance — for every experience level.</p>
+
+        <div class="home-cta-row">
+          <a href="contact.html" class="btn btn-hero-gold">Join AIF </a>
+          <a href="#do" class="btn btn-hero-ghost">What We Do</a>
+        </div>
+
+        <div class="home-stats">
+          <span><b>All</b> majors welcome</span>
+          <span class="sep"></span>
+          <span><b>No</b> experience needed</span>
+          <span class="sep"></span>
+          <span><b>Anyone</b> can join</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated market line -->
+    <svg class="hero-marketline" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="mlFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(212,160,23,0.18)"/>
+          <stop offset="100%" stop-color="rgba(212,160,23,0)"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,150 L120,140 L240,148 L360,118 L480,128 L600,96 L720,108 L840,74 L960,86 L1080,52 L1200,60 L1320,30 L1440,16 L1440,180 L0,180 Z"
+            fill="url(#mlFill)"/>
+      <path class="ml-path"
+            d="M0,150 L120,140 L240,148 L360,118 L480,128 L600,96 L720,108 L840,74 L960,86 L1080,52 L1200,60 L1320,30 L1440,16"
+            fill="none" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="ml-halo" r="9" fill="#E8B820" opacity="0.45">
+        <animateMotion dur="9s" begin="0s" repeatCount="indefinite" rotate="0"
+          keyPoints="0;1" keyTimes="0;1" calcMode="linear"
+          path="M0,150 L120,140 L240,148 L360,118 L480,128 L600,96 L720,108 L840,74 L960,86 L1080,52 L1200,60 L1320,30 L1440,16"/>
+      </circle>
+      <circle class="ml-dot" r="5" fill="#E8B820">
+        <animateMotion dur="9s" begin="0s" repeatCount="indefinite" rotate="0"
+          keyPoints="0;1" keyTimes="0;1" calcMode="linear"
+          path="M0,150 L120,140 L240,148 L360,118 L480,128 L600,96 L720,108 L840,74 L960,86 L1080,52 L1200,60 L1320,30 L1440,16"/>
+      </circle>
+      <circle class="ml-core" r="2" fill="#FFF4D6">
+        <animateMotion dur="9s" begin="0s" repeatCount="indefinite" rotate="0"
+          keyPoints="0;1" keyTimes="0;1" calcMode="linear"
+          path="M0,150 L120,140 L240,148 L360,118 L480,128 L600,96 L720,108 L840,74 L960,86 L1080,52 L1200,60 L1320,30 L1440,16"/>
+      </circle>
+    </svg>
+  </header>
+
+  <!-- INTRO + LEARN/BUILD/CONNECT -->
+  <section class="section" id="do">
+    <div class="container">
+      <div class="text-center" style="max-width: 600px; margin: 0 auto 52px;">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Three ways to <span>get involved</span></h2>
+      </div>
+
+      <div class="lbc-grid">
+        <div class="lbc-card">
+          <h3>Learn</h3>
+          <p>Workshops and sessions on Python, machine learning, markets, and how AI is actually used across finance — built for every experience level.</p>
+        </div>
+        <div class="lbc-card">
+          <h3>Build</h3>
+          <p>Join a small project team to ship something real — a model, a strategy, a report — and present what you made to the club.</p>
+        </div>
+        <div class="lbc-card">
+          <h3>Connect</h3>
+          <p>Guest speakers, networking nights, and a growing network of peers and alumni working at the edge of AI and finance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="events-top">
+        <div>
+          <div class="section-label">Spring 2026</div>
+          <h2 class="section-title">Upcoming <span>Events</span></h2>
+        </div>
+        <a href="events.html" class="link-arrow">View all events </a>
+      </div>
+      <div class="events-grid">
+        <div class="card event-card">
+          <span class="event-type event-type-workshop">Workshop</span>
+          <div class="event-date">April 22, 2026 &nbsp;·&nbsp; 5:30 PM</div>
+          <h3>Intro to AI in Finance</h3>
+          <p>An accessible overview of how machine learning is transforming finance — from algorithmic trading to AI-powered advisors. No prior experience required.</p>
+          <div class="event-footer">
+            <span class="event-location">Carlson School, Rm 1-115</span>
+          </div>
+        </div>
+        <div class="card event-card">
+          <span class="event-type event-type-speaker">Guest Speaker</span>
+          <div class="event-date">May 6, 2026 &nbsp;·&nbsp; 5:00 PM</div>
+          <h3>Industry Expert Panel</h3>
+          <p>Professionals working across AI and financial services discuss their career paths, daily work, and advice for students entering the field.</p>
+          <div class="event-footer">
+            <span class="event-location">Hanson Hall, Room 3-210</span>
+          </div>
+        </div>
+        <div class="card event-card">
+          <span class="event-type event-type-networking">Networking</span>
+          <div class="event-date">May 20, 2026 &nbsp;·&nbsp; 6:00 PM</div>
+          <h3>Spring Networking Night</h3>
+          <p>Close out the year by connecting with fellow members, alumni, and industry contacts in a relaxed, social setting.</p>
+          <div class="event-footer">
+            <span class="event-location">Location TBD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-label">Get Started</div>
+      <h2>Ready to Join AIF?</h2>
+      <p>Open to all UMN students. No experience required — just curiosity about AI and finance.</p>
+      <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:14px 36px;">Become a Member</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg class="logo-mark" width="40" height="36" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI in Finance logo">
+            <rect x="3" y="27" width="8" height="13" rx="2.5" fill="#FAF8F4" opacity="0.92"/>
+            <rect x="15" y="20" width="8" height="20" rx="2.5" fill="#FAF8F4" opacity="0.92"/>
+            <rect x="27" y="12" width="8" height="28" rx="2.5" fill="#FFFFFF"/>
+            <path d="M4 31 L16 24 L28 16 L42 6" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35 6 L43 6 L43 14" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p>AI in Finance (AIF) is a University of Minnesota student organization exploring the intersection of artificial intelligence and the financial industry. AIF operates in accordance with all University of Minnesota policies.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/aifclub_umn" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Navigate</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="events.html">Events</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get Involved</h5>
+          <a href="contact.html">Join AIF</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="events.html">Attend Events</a>
+        </div>
+        <div class="footer-col">
+          <h5>University</h5>
+          <a href="https://umn.edu" target="_blank" rel="noopener">UMN Homepage</a>
+          <a href="https://carlsonschool.umn.edu" target="_blank" rel="noopener">Carlson School</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AI in Finance — University of Minnesota. All rights reserved.</p>
+        <p>Made with care by the <span>AIF Board</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
