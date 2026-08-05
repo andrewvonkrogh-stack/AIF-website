@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Events — AI in Finance | University of Minnesota</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <meta name="description" content="Upcoming AIF workshops, guest speakers, and socials at the University of Minnesota." />
+  <link rel="icon" type="image/png" href="assets/images/brand/aif-logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -17,17 +18,17 @@
   <nav class="navbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo" aria-label="AI in Finance — University of Minnesota, home">
-        <img src="aif-logo.png" alt="AI in Finance — University of Minnesota" class="navbar-logo-img" />
+        <img src="assets/images/brand/aif-logo.png" alt="AI in Finance — University of Minnesota" class="navbar-logo-img" />
       </a>
       <div class="navbar-right">
         <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html" class="active">Events</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="contact.html" class="btn btn-gold navbar-cta">Join Us</a>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="team.html">Leadership</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-solid navbar-cta">Join AIF</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -35,149 +36,93 @@
     </div>
     <div class="mobile-menu" id="mobileMenu" style="display:none;">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="events.html">Events</a>
-      <a href="team.html">Team</a>
+      <a href="team.html">Leadership</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="section-label">Calendar</div>
-      <h1>Events</h1>
-      <p>Workshops, speaker series, networking nights, and more — all designed to connect you with the AI and finance world.</p>
-      <div class="gold-bar"></div>
+  <section class="page-hero events-hero">
+    <div class="events-hero-art" aria-hidden="true">
+      <img src="assets/images/sketches/classroom-sketch.png" alt="" />
     </div>
-  </section>
-
-  <!-- EVENT TYPE KEY -->
-  <section style="padding: 24px 0; background: var(--white); border-bottom: 1px solid var(--border-light);">
     <div class="container">
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
-        <span style="font-size:0.78rem; font-weight:600; color: var(--text-light); margin-right: 4px; text-transform: uppercase; letter-spacing: 0.08em;">Event Types:</span>
-        <span class="event-type event-type-workshop">Workshop</span>
-        <span class="event-type event-type-speaker">Guest Speaker</span>
-        <span class="event-type event-type-networking">Networking</span>
-        <span class="event-type event-type-social">Social</span>
-      </div>
+      <p class="eyebrow">Fall 2026</p>
+      <h1 class="display">The <em>calendar.</em></h1>
+      <p class="page-lead">Workshops, guest speakers, and socials — dates announced first to members and on Instagram.</p>
     </div>
   </section>
 
-  <!-- UPCOMING EVENTS -->
+  <!-- EVENT LEDGER -->
   <section class="section">
     <div class="container">
-      <div class="section-label">Spring 2026</div>
-      <h2 class="section-title" style="margin-bottom: 40px;">Upcoming <span>Events</span></h2>
-      <div class="events-grid">
+      <div class="event-list">
 
-        <div class="card event-card">
-          <span class="event-type event-type-workshop">Workshop</span>
-          <div class="event-date">April 22, 2026 &nbsp;·&nbsp; 5:30 PM</div>
-          <h3>Intro to AI in Finance</h3>
-          <p>An accessible overview of how machine learning and AI tools are transforming finance — from algorithmic trading to AI-powered financial advisors. No prior AI experience required.</p>
-          <div class="event-footer">
-            <span class="event-location">Carlson School, Rm 1-115</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">SPEAKER</p>
+          <p class="event-date">WED SEPT 16 · 6–7 PM</p>
+          <div class="event-body">
+            <h3>Guest speaker kickoff</h3>
+            <p class="event-desc">Start the semester with AIF’s first guest speaker session, plus a short introduction to what AIF is building this fall.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
-        <div class="card event-card">
-          <span class="event-type event-type-speaker">Guest Speaker</span>
-          <div class="event-date">May 6, 2026 &nbsp;·&nbsp; 5:00 PM</div>
-          <h3>Industry Expert Panel</h3>
-          <p>Professionals working at the intersection of AI and financial services discuss their career paths, daily work, and advice for students entering the field.</p>
-          <div class="event-footer">
-            <span class="event-location">Hanson Hall, Room 3-210</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">SPEAKER</p>
+          <p class="event-date">WED SEPT 23 · 6–7 PM</p>
+          <div class="event-body">
+            <h3>Guest speaker session</h3>
+            <p class="event-desc">A second guest speaker session focused on how AI is changing finance, business, and the skills students need to build now.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
-        <div class="card event-card">
-          <span class="event-type event-type-networking">Networking</span>
-          <div class="event-date">May 20, 2026 &nbsp;·&nbsp; 6:00 PM</div>
-          <h3>Spring Networking Night</h3>
-          <p>Close out the academic year by connecting with fellow members, alumni, and industry contacts in a relaxed, social environment.</p>
-          <div class="event-footer">
-            <span class="event-location">Location TBD</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">WEEKLY MEETINGS</p>
+          <p class="event-date">WEDNESDAYS · 6–7 PM</p>
+          <div class="event-body">
+            <h3>AIF weekly meetings</h3>
+            <p class="event-desc">After the first two speaker sessions, AIF meets every Wednesday evening during the fall semester for practical AI workshops, project work, member discussions, and additional speaker events.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
-        <div class="card event-card">
-          <span class="event-type event-type-workshop">Workshop</span>
-          <div class="event-date">September 2026 &nbsp;·&nbsp; Fall Kickoff</div>
-          <h3>Python for Finance Workshop</h3>
-          <p>Hands-on session using Python, pandas, and financial data APIs to build basic quantitative models and visualize market data.</p>
-          <div class="event-footer">
-            <span class="event-location">Location TBD</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">FALL SCHEDULE</p>
+          <p class="event-date">SEPT 16 – DEC 9</p>
+          <div class="event-body">
+            <h3>Fall 2026 meeting dates</h3>
+            <p class="event-desc">Sept. 16, Sept. 23, Sept. 30, Oct. 7, Oct. 14, Oct. 21, Oct. 28, Nov. 4, Nov. 11, Nov. 18, Dec. 2, and Dec. 9.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
-        <div class="card event-card">
-          <span class="event-type event-type-speaker">Guest Speaker</span>
-          <div class="event-date">October 2026 &nbsp;·&nbsp; TBD</div>
-          <h3>Quant Finance &amp; AI Deep Dive</h3>
-          <p>A quantitative analyst breaks down how AI is used in real portfolio management and risk modeling at a top-tier financial firm.</p>
-          <div class="event-footer">
-            <span class="event-location">Location TBD</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">NO MEETING</p>
+          <p class="event-date">WED NOV 25</p>
+          <div class="event-body">
+            <h3>Thanksgiving travel week</h3>
+            <p class="event-desc">No regular meeting this week so members can travel, reset, and return for the final stretch of the semester.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
-        <div class="card event-card">
-          <span class="event-type event-type-social">Social</span>
-          <div class="event-date">October 2026 &nbsp;·&nbsp; TBD</div>
-          <h3>Fall Social &amp; Study Break</h3>
-          <p>A low-key social event for members to relax, connect, and take a breather mid-semester. Details to come.</p>
-          <div class="event-footer">
-            <span class="event-location">Location TBD</span>
+        <article class="event-row reveal">
+          <p class="ledger-tag">FINAL MEETING</p>
+          <p class="event-date">WED DEC 9 · 6–7 PM</p>
+          <div class="event-body">
+            <h3>End-of-semester wrap-up</h3>
+            <p class="event-desc">Close out the fall semester, recap what members built and learned, and preview what is coming next for AIF.</p>
           </div>
-        </div>
+          <span class="tick" aria-hidden="true">→</span>
+        </article>
 
       </div>
-    </div>
-  </section>
 
-  <!-- PAST EVENTS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-label">Archive</div>
-      <h2 class="section-title" style="margin-bottom: 40px;">Past <span>Events</span></h2>
-      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px;">
-
-        <div style="display: flex; gap: 20px; align-items: center; padding: 20px 24px; background: var(--white); border-radius: var(--radius); border: 1px solid var(--border);">
-          <div style="min-width: 48px; text-align: center;">
-            <div style="font-size: 1rem; font-weight: 800; color: var(--maroon); line-height: 1.1;">APR</div>
-            <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 600;">2026</div>
-          </div>
-          <div style="flex: 1;">
-            <h4 style="margin-bottom: 3px;">Founding Meeting &amp; Club Kickoff</h4>
-            <p style="font-size: 0.86rem; margin: 0;">Introduction to AIF, board presentations, and open Q&amp;A for prospective members.</p>
-          </div>
-          <span class="event-type event-type-social" style="white-space: nowrap;">Social</span>
-        </div>
-
-        <div style="display: flex; gap: 20px; align-items: center; padding: 20px 24px; background: var(--white); border-radius: var(--radius); border: 1px solid var(--border);">
-          <div style="min-width: 48px; text-align: center;">
-            <div style="font-size: 1rem; font-weight: 800; color: var(--maroon); line-height: 1.1;">APR</div>
-            <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 600;">2026</div>
-          </div>
-          <div style="flex: 1;">
-            <h4 style="margin-bottom: 3px;">AI Landscape in Finance — Overview Session</h4>
-            <p style="font-size: 0.86rem; margin: 0;">A broad look at current AI adoption across banking, insurance, asset management, and fintech startups.</p>
-          </div>
-          <span class="event-type event-type-workshop" style="white-space: nowrap;">Workshop</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="section-label">Never Miss an Event</div>
-      <h2>Join AIF to Stay in the Loop</h2>
-      <p>Members receive event announcements, speaker invites, and exclusive access to AIF workshops and socials.</p>
-      <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:14px 36px;">Become a Member</a>
+      <p class="events-note reveal">Meetings begin Wednesday, Sept. 16 at 6 PM with our first guest speaker session. <a href="contact.html">Join AIF</a> to get room details and reminders.</p>
     </div>
   </section>
 
@@ -186,35 +131,31 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <svg class="logo-mark" width="40" height="36" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI in Finance logo"><rect x="3" y="27" width="8" height="13" rx="2.5" fill="#FAF8F4" opacity="0.92"/><rect x="15" y="20" width="8" height="20" rx="2.5" fill="#FAF8F4" opacity="0.92"/><rect x="27" y="12" width="8" height="28" rx="2.5" fill="#FFFFFF"/><path d="M4 31 L16 24 L28 16 L42 6" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 6 L43 6 L43 14" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="footer-word">AI in <em>Finance.</em></p>
           <p>AI in Finance (AIF) is a University of Minnesota student organization exploring the intersection of artificial intelligence and the financial industry. AIF operates in accordance with all University of Minnesota policies.</p>
           <div class="footer-social">
             <a href="https://instagram.com/aifclub_umn" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/umnaif" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:aif@umn.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
           <a href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="events.html">Events</a>
-          <a href="team.html">Team</a>
+          <a href="team.html">Leadership</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h5>Get Involved</h5>
+          <h5>Get involved</h5>
           <a href="contact.html">Join AIF</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="events.html">Attend Events</a>
-        </div>
-        <div class="footer-col">
-          <h5>University</h5>
-          <a href="https://umn.edu" target="_blank" rel="noopener">UMN Homepage</a>
-          <a href="https://carlsonschool.umn.edu" target="_blank" rel="noopener">Carlson School</a>
+          <a href="contact.html">Contact us</a>
+          <a href="events.html">Attend events</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 AI in Finance — University of Minnesota. All rights reserved.</p>
+        <p>© 2026 AI in Finance — University of Minnesota</p>
         <p>Made with care by the <span>AIF Board</span></p>
       </div>
     </div>

@@ -1,246 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="js">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team — AI in Finance | University of Minnesota</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <title>Leadership — AI in Finance | University of Minnesota</title>
+  <meta name="description" content="Meet the leadership of AI in Finance (AIF), a University of Minnesota student organization focused on the intersection of artificial intelligence and finance." />
+  <link rel="icon" type="image/png" href="assets/images/brand/aif-logo.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .board-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .board-card {
-      text-align: left;
-      padding: 28px 26px;
-      transition: box-shadow .25s ease, border-color .25s ease;
-    }
-    .board-avatar { margin-left: 0; }
-    .board-bullets { list-style: none; margin: 14px 0 0; padding: 0; }
-    .board-bullets li {
-      position: relative; padding-left: 18px; margin-bottom: 8px;
-      font-size: 0.84rem; color: var(--text-light); line-height: 1.55;
-    }
-    .board-bullets li::before {
-      content: ''; position: absolute; left: 0; top: 9px;
-      width: 5px; height: 5px; border-radius: 50%; background: var(--gold-warm);
-    }
-
-    .board-card:hover { box-shadow: var(--shadow-md); border-color: var(--border); }
-
-    .board-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: var(--maroon-soft);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 0 14px;
-      font-size: 0.95rem;
-      font-weight: 800;
-      color: var(--maroon);
-      letter-spacing: 0.02em;
-    }
-
-    .board-avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .board-card h3 { font-size: 0.92rem; color: var(--text); margin-bottom: 6px; }
-
-    .board-role {
-      display: inline-block;
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--maroon);
-      background: var(--maroon-soft);
-      border-radius: 100px;
-      padding: 4px 11px;
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .board-card .board-bio {
-      font-size: 0.81rem;
-      color: var(--text-light);
-      line-height: 1.55;
-      margin: 0 0 12px;
-      text-align: left;
-    }
-
-    .board-links { display: flex; justify-content: center; gap: 8px; }
-
-    .board-links a {
-      width: 30px;
-      height: 30px;
-      border-radius: var(--radius);
-      background: var(--cream);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      transition: all 0.2s ease;
-    }
-
-    .board-links a:hover { background: var(--maroon); color: var(--white); border-color: var(--maroon); }
-
-    /* Responsibility bullets */
-    .board-bullets {
-      list-style: none;
-      text-align: left;
-      margin: 0 0 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .board-bullets li {
-      font-size: 0.79rem;
-      color: var(--text-light);
-      line-height: 1.45;
-      padding-left: 12px;
-      position: relative;
-    }
-
-    .board-bullets li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 7px;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    .role-explainer {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .role-card {
-      display: flex;
-      gap: 14px;
-      padding: 22px;
-      background: var(--white);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .role-num {
-      width: 34px;
-      height: 34px;
-      min-width: 34px;
-      border-radius: var(--radius);
-      background: var(--maroon-soft);
-      color: var(--maroon);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .role-card h4 { color: var(--text); margin-bottom: 6px; font-size: 0.92rem; }
-    .role-card ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .role-card ul li {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      padding-left: 12px;
-      position: relative;
-      line-height: 1.4;
-    }
-    .role-card ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    @media (max-width: 1024px) { .board-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 768px) {
-      .board-grid { grid-template-columns: 1fr; }
-      .role-explainer { grid-template-columns: 1fr; }
-    }
-
-    /* ---- Executive Board (Big 4) ---- */
-    .exec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
-    .exec-card { position: relative; padding: 34px 26px 26px; text-align: center; border-top: 3px solid var(--gold-warm); }
-    .exec-avatar {
-      width: 84px; height: 84px; margin: 0 auto 18px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; font-weight: 800; color: #fff;
-      background: linear-gradient(145deg, var(--maroon-light), var(--maroon-deep));
-      box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--gold-warm), 0 8px 20px rgba(123,28,28,0.22);
-    }
-    .exec-card h3 { font-size: 1.02rem; color: var(--text); margin-bottom: 7px; }
-    .exec-role {
-      display: inline-block; font-size: 0.7rem; font-weight: 800;
-      letter-spacing: 0.12em; text-transform: uppercase; color: var(--maroon);
-      background: rgba(212,160,23,0.12); border: 1px solid rgba(196,154,10,0.4);
-      border-radius: 100px; padding: 5px 14px; margin-bottom: 14px;
-    }
-    .exec-mandate { font-size: 0.84rem; line-height: 1.65; color: var(--text-light); margin-bottom: 16px; }
-    .board-links { display: flex; gap: 10px; justify-content: center; }
-    .board-links a {
-      width: 32px; height: 32px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--cream); border: 1px solid var(--border);
-      color: var(--text-light); font-size: 0.8rem; transition: all .2s ease;
-    }
-    .board-links a:hover { color: var(--maroon); border-color: var(--maroon); }
-    .role-card.exec-tier { border-left: 3px solid var(--gold-warm); }
-    .role-card.exec-tier .role-num { background: var(--gold-warm); color: #2A1505; }
-    .role-card ul li b { color: var(--text); font-weight: 700; }
-    @media (max-width: 1024px) { .exec-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px)  { .exec-grid { grid-template-columns: 1fr; } }
-  </style>
 </head>
-<body>
+<body class="leadership-page">
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo" aria-label="AI in Finance — University of Minnesota, home">
-        <img src="aif-logo.png" alt="AI in Finance — University of Minnesota" class="navbar-logo-img" />
+        <img src="assets/images/brand/aif-logo.png" alt="AI in Finance — University of Minnesota" class="navbar-logo-img" />
       </a>
       <div class="navbar-right">
         <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="team.html" class="active">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="contact.html" class="btn btn-gold navbar-cta">Join Us</a>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="team.html">Leadership</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-solid navbar-cta">Join AIF</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -248,146 +36,90 @@
     </div>
     <div class="mobile-menu" id="mobileMenu" style="display:none;">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="events.html">Events</a>
-      <a href="team.html">Team</a>
+      <a href="team.html">Leadership</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
   </nav>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="section-label">Leadership</div>
-      <h1>Meet the Board</h1>
-      <p>AIF is led by a four-person executive board and six officers — ten University of Minnesota students driving education, research, and real-world AI in finance.</p>
-      <div class="gold-bar"></div>
+    <div class="container">
+      <p class="eyebrow">The board</p>
+      <h1 class="display">AIF <em>leadership.</em></h1>
+      <p class="page-lead">The students building AIF — across finance, data science, cybersecurity, marketing, and more.</p>
     </div>
   </section>
 
-  <!-- EXECUTIVE BOARD — THE BIG 4 -->
+  <!-- ROSTER -->
   <section class="section">
     <div class="container">
-      <div class="text-center" style="margin-bottom: 48px;">
-        <div class="section-label">2025–2026 Academic Year</div>
-        <h2 class="section-title">Executive <span>Board</span></h2>
-        <p class="section-subtitle">Four executives set the strategic, technical, and financial direction of AIF.</p>
-      </div>
+      <div class="team-grid">
 
-      <div class="exec-grid">
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/will-dunbar.jpg" alt="Headshot of William Dunbar" loading="lazy" /></div>
+          <h3>William Dunbar</h3>
+          <p class="team-role">President</p>
+          <p class="team-study">Junior · Finance and MIS</p>
+          <p class="team-hometown">Hometown: West Hartford, CT</p>
+        </article>
 
-        <div class="card exec-card">
-          <div class="exec-avatar">P</div>
-          <h3>Name TBD</h3>
-          <div class="exec-role">President</div>
-          <p class="exec-mandate">Sets the vision and strategic direction of AIF, leads the executive board, and represents the organization to the University, faculty, and industry partners.</p>
-          <div class="board-links"><a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
-        </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/ryan-melody.jpg" alt="Headshot of Ryan Melody" loading="lazy" /></div>
+          <h3>Ryan Melody</h3>
+          <p class="team-role">Vice President</p>
+          <p class="team-study">Junior · Cybersecurity</p>
+          <p class="team-hometown">Hometown: Wheaton, IL</p>
+        </article>
 
-        <div class="card exec-card">
-          <div class="exec-avatar">VP</div>
-          <h3>Name TBD</h3>
-          <div class="exec-role">Vice President</div>
-          <p class="exec-mandate">Oversees internal operations and coordination across every role, runs board meetings, drives accountability, and acts on behalf of the President when needed.</p>
-          <div class="board-links"><a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
-        </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/andrew-von-krogh.jpg" alt="Headshot of Andrew Von Krogh" loading="lazy" /></div>
+          <h3>Andrew Von Krogh</h3>
+          <p class="team-role">Head of AI</p>
+          <p class="team-study">Sophomore · Data Science</p>
+          <p class="team-hometown">Hometown: Los Altos, CA</p>
+        </article>
 
-        <div class="card exec-card">
-          <div class="exec-avatar">AI</div>
-          <h3>Name TBD</h3>
-          <div class="exec-role">Head of AI</div>
-          <p class="exec-mandate">Leads the technical agenda — machine learning curriculum, tooling, and model development — and ensures every AIF project is built on real, rigorous AI.</p>
-          <div class="board-links"><a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
-        </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/josh-barsky.jpg" alt="Headshot of Josh Barsky" loading="lazy" /></div>
+          <h3>Josh Barsky</h3>
+          <p class="team-role">Head of Finance</p>
+          <p class="team-study">Senior · Finance</p>
+          <p class="team-hometown">Hometown: Deerfield, IL</p>
+        </article>
 
-        <div class="card exec-card">
-          <div class="exec-avatar">F</div>
-          <h3>Name TBD</h3>
-          <div class="exec-role">Head of Finance</div>
-          <p class="exec-mandate">Leads the finance agenda — markets education, quantitative research, and applications — and ensures AIF's work is financially meaningful and industry-relevant.</p>
-          <div class="board-links"><a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
-        </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/georgia-mckeown.jpg" alt="Headshot of Georgia McKeown" loading="lazy" /></div>
+          <h3>Georgia McKeown</h3>
+          <p class="team-role">Director of Marketing</p>
+          <p class="team-study">Junior · Marketing and International Business</p>
+          <p class="team-hometown">Hometown: Racine, WI</p>
+        </article>
 
-      </div>
-    </div>
-  </section>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/greg-fox.jpg" alt="Headshot of Greg Fox" loading="lazy" /></div>
+          <h3>Greg Fox</h3>
+          <p class="team-role">Director of Communications</p>
+          <p class="team-study">Sophomore · Finance and Accounting</p>
+          <p class="team-hometown">Hometown: Oak Park, IL</p>
+        </article>
 
-  <!-- OFFICERS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 48px;">
-        <div class="section-label">Leadership Team</div>
-        <h2 class="section-title">Officers</h2>
-        <p class="section-subtitle">Six officers run the day-to-day engine of the club — finances, records, education, projects, partnerships, and outreach.</p>
-      </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/kyra-shah.jpg" alt="Headshot of Kyra Shah" loading="lazy" /></div>
+          <h3>Kyra Shah</h3>
+          <p class="team-role">Director of Outreach</p>
+          <p class="team-study">Junior · Finance and Healthcare Management</p>
+          <p class="team-hometown">Hometown: Edina, MN</p>
+        </article>
 
-      <div class="board-grid">
-
-        <div class="card board-card">
-          <div class="board-avatar">T</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Treasurer</div>
-          <ul class="board-bullets">
-            <li>Manages budget, funding requests, and expenses</li>
-            <li>Allocates resources for events, tools, and projects</li>
-            <li>Keeps financials organized and transparent</li>
-          </ul>
-        </div>
-
-        <div class="card board-card">
-          <div class="board-avatar">S</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Secretary</div>
-          <ul class="board-bullets">
-            <li>Tracks attendance, meeting notes, and documentation</li>
-            <li>Manages internal systems and communications</li>
-            <li>Keeps the organization's records accessible</li>
-          </ul>
-        </div>
-
-        <div class="card board-card">
-          <div class="board-avatar">ED</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Director of Education</div>
-          <ul class="board-bullets">
-            <li>Designs curriculum covering AI and finance fundamentals</li>
-            <li>Runs workshops — Python, ML, markets, and more</li>
-            <li>Builds a learning path from beginner to advanced</li>
-          </ul>
-        </div>
-
-        <div class="card board-card">
-          <div class="board-avatar">DP</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Director of Projects</div>
-          <ul class="board-bullets">
-            <li>Organizes members into focused project teams</li>
-            <li>Defines deliverables — model, report, and presentation</li>
-            <li>Tracks execution from kickoff to showcase</li>
-          </ul>
-        </div>
-
-        <div class="card board-card">
-          <div class="board-avatar">CR</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Director of Corporate Relations</div>
-          <ul class="board-bullets">
-            <li>Builds partnerships with companies, sponsors, and alumni</li>
-            <li>Brings in guest speakers and recruiting opportunities</li>
-            <li>Creates internship and networking pipelines</li>
-          </ul>
-        </div>
-
-        <div class="card board-card">
-          <div class="board-avatar">ME</div>
-          <h3>Name TBD</h3>
-          <div class="board-role">Director of Marketing &amp; Events</div>
-          <ul class="board-bullets">
-            <li>Runs social media, branding, and campus outreach</li>
-            <li>Drives recruitment and member engagement</li>
-            <li>Plans events — workshops, competitions, networking</li>
-          </ul>
-        </div>
+        <article class="team-card reveal">
+          <div class="team-photo"><img src="assets/images/leadership/emilio-gomez.jpg" alt="Headshot of Emilio Gomez" loading="lazy" /></div>
+          <h3>Emilio Gomez</h3>
+          <p class="team-role">Director of Recruiting</p>
+          <p class="team-study">Junior · Finance and Accounting</p>
+          <p class="team-hometown">Hometown: Minnetonka, MN</p>
+        </article>
 
       </div>
     </div>
@@ -398,35 +130,31 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <svg class="logo-mark" width="40" height="36" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI in Finance logo"><rect x="3" y="27" width="8" height="13" rx="2.5" fill="#FAF8F4" opacity="0.92"/><rect x="15" y="20" width="8" height="20" rx="2.5" fill="#FAF8F4" opacity="0.92"/><rect x="27" y="12" width="8" height="28" rx="2.5" fill="#FFFFFF"/><path d="M4 31 L16 24 L28 16 L42 6" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 6 L43 6 L43 14" stroke="#E8B820" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="footer-word">AI in <em>Finance.</em></p>
           <p>AI in Finance (AIF) is a University of Minnesota student organization exploring the intersection of artificial intelligence and the financial industry. AIF operates in accordance with all University of Minnesota policies.</p>
           <div class="footer-social">
             <a href="https://instagram.com/aifclub_umn" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/umnaif" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:aif@umn.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
         <div class="footer-col">
           <h5>Navigate</h5>
           <a href="index.html">Home</a>
-          <a href="about.html">About</a>
           <a href="events.html">Events</a>
-          <a href="team.html">Team</a>
+          <a href="team.html">Leadership</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
-          <h5>Get Involved</h5>
+          <h5>Get involved</h5>
           <a href="contact.html">Join AIF</a>
-          <a href="contact.html">Contact Us</a>
-          <a href="events.html">Attend Events</a>
-        </div>
-        <div class="footer-col">
-          <h5>University</h5>
-          <a href="https://umn.edu" target="_blank" rel="noopener">UMN Homepage</a>
-          <a href="https://carlsonschool.umn.edu" target="_blank" rel="noopener">Carlson School</a>
+          <a href="contact.html">Contact us</a>
+          <a href="events.html">Attend events</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 AI in Finance — University of Minnesota. All rights reserved.</p>
+        <p>© 2026 AI in Finance — University of Minnesota</p>
         <p>Made with care by the <span>AIF Board</span></p>
       </div>
     </div>

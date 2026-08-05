@@ -1,12 +1,14 @@
 /* =========================================================
-   AIF — core interactions only (page renders fully loaded;
-   no scroll reveals, no count-ups)
+   AIF — interactions
+   Navbar · mobile menu · rewriting headline · scroll reveals
    ========================================================= */
 
-/* ---- Navbar scroll effect (glassy on scroll) ---- */
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- Navbar scroll hairline ---- */
 const navbar = document.querySelector('.navbar');
 if (navbar) {
-  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 12);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 }
@@ -31,52 +33,84 @@ if (hamburger && mobileMenu) {
 /* ---- Active nav link ---- */
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.navbar-links a, .mobile-menu a').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    link.classList.add('active');
-  }
+  if (link.getAttribute('href') === currentPage) link.classList.add('active');
 });
 
-/* ---- Contact form ---- */
+/* ---- Rewriting headline (signature) ----
+   "AI is rewriting finance." — the last word literally rewrites itself. */
+const rewriteEl = document.getElementById('rewriteWord');
+if (rewriteEl) {
+  const words = ['finance.', 'markets.', 'investing.', 'research.', 'careers.'];
+  if (prefersReduced) {
+    rewriteEl.textContent = words[0];
+  } else {
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = false;
+    rewriteEl.textContent = words[0];
+
+    const tick = () => {
+      const word = words[wordIndex];
+      if (!deleting) {
+        charIndex++;
+        rewriteEl.textContent = word.slice(0, charIndex);
+        if (charIndex >= word.length) {
+          deleting = true;
+          setTimeout(tick, 2600); // hold the finished word
+          return;
+        }
+        setTimeout(tick, 70);
+      } else {
+        charIndex--;
+        rewriteEl.textContent = word.slice(0, charIndex);
+        if (charIndex <= 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(tick, 320);
+          return;
+        }
+        setTimeout(tick, 42);
+      }
+    };
+    setTimeout(tick, 2600);
+  }
+}
+
+/* ---- Ticker: duplicate content for a seamless loop ---- */
+const tickerTrack = document.querySelector('.ticker-track');
+if (tickerTrack && tickerTrack.children.length === 1) {
+  tickerTrack.appendChild(tickerTrack.children[0].cloneNode(true));
+}
+
+/* ---- Scroll reveals ---- */
+const revealEls = document.querySelectorAll('.reveal');
+if (revealEls.length && 'IntersectionObserver' in window && !prefersReduced) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+/* ---- Interest form ---- */
 const form = document.getElementById('joinForm');
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Submitted!';
+    const original = btn.innerHTML;
+    btn.textContent = 'Received — welcome aboard';
     btn.disabled = true;
-    btn.style.background = '#2D6A4F';
-    btn.style.borderColor = '#2D6A4F';
     setTimeout(() => {
-      btn.textContent = 'Submit Interest Form';
+      btn.innerHTML = original;
       btn.disabled = false;
-      btn.style.background = '';
-      btn.style.borderColor = '';
       form.reset();
-    }, 3000);
-  });
-}
-
-/* ---- Partner / speaker outreach form -> opens email to the club ---- */
-const partnerForm = document.getElementById('partnerForm');
-if (partnerForm) {
-  // TODO: replace with the club's real email once it's set up
-  const AIF_EMAIL = 'aifinanceclub.umn@gmail.com';
-  partnerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name  = document.getElementById('pName').value.trim();
-    const org   = document.getElementById('pOrg').value.trim();
-    const email = document.getElementById('pEmail').value.trim();
-    const msg   = document.getElementById('pMsg').value.trim();
-    if (!name || !email || !msg) { partnerForm.reportValidity?.(); return; }
-
-    const subject = `Partnership / speaker inquiry — ${name}${org ? ' (' + org + ')' : ''}`;
-    const body =
-      `Name: ${name}\n` +
-      `Company/Organization: ${org || '—'}\n` +
-      `Email: ${email}\n\n` +
-      `Message:\n${msg}\n`;
-    window.location.href =
-      `mailto:${AIF_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }, 3200);
   });
 }
